@@ -17,7 +17,7 @@ Este projeto foi feito em equipe com intuído de nos desafiarmos a construir um 
   <br />
 
 - Desenvolvimento de aplicações Node.js
-- Modelagem de banco MySQL
+- Modelagem de banco SQL
 - Utilização de ORM Sequelize
 - Utilização de bibliotecas de terceiros
 - Trabalho em equipe
@@ -38,7 +38,7 @@ Este projeto foi feito em equipe com intuído de nos desafiarmos a construir um 
   <br />
 
 - Node.js
-- MySQL
+- PostgreSQL
 - Sequelize
 - Trello
 - Discord
