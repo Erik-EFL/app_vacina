@@ -64,8 +64,8 @@ Este projeto foi feito em equipe com intuído de nos desafiarmos a construir um 
 
 - Para rodar o projeto, você precisará ter instalado em sua máquina o [Node.js](https://nodejs.org/en/), o [Docker](https://www.docker.com/) e caso não queira usar o docker(Recomendo que use) instale o [PostegreSQL](https://www.postgresql.org/) e caso não tenha, siga os passos de instalação de cada um deles.
 
-- Para começar vamos executar o comando `npm run docker` para iniciar o container do MySQL.
-- Agora vamos executar o comando `npm run migration` para instalar as dependências e popular com as tabelas o banco de dados.
+- Para começar vamos executar o comando `npm run docker` para iniciar o container docker com Postegre ja criado.
+- Agora vamos executar o comando `npm run migration` para popular com as tabelas o banco de dados.
 
 - Agora vamos executar o comando `npm start` para executar o projeto.
 
