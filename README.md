@@ -62,7 +62,7 @@ Este projeto foi feito em equipe com intuído de nos desafiarmos a construir um 
 - Clone o repositório com o comando `git clone git@github.com:Erik-EFL/app_vacina.git`
 - Entre na pasta do projeto com o comando `cd app_vacina`
 
-- Para rodar o projeto, você precisará ter instalado em sua máquina o [Node.js](https://nodejs.org/en/), o [Docker](https://www.docker.com/) e caso não queira usar o docker(Recomendo que use) instale o [MySQL](https://www.mysql.com/) e caso não tenha, siga os passos de instalação de cada um deles.
+- Para rodar o projeto, você precisará ter instalado em sua máquina o [Node.js](https://nodejs.org/en/), o [Docker](https://www.docker.com/) e caso não queira usar o docker(Recomendo que use) instale o [PostegreSQL](https://www.postgresql.org/) e caso não tenha, siga os passos de instalação de cada um deles.
 
 - Para começar vamos executar o comando `npm run docker` para iniciar o container do MySQL.
 - Agora vamos executar o comando `npm run migration` para instalar as dependências e popular com as tabelas o banco de dados.
