@@ -1,42 +1,31 @@
 const {sequelize, DataTypes} = require('sequelize')
 
 module.exports = (sequelize, DataTypes) => {
-  const Vacina = sequelize.define(
-    "Vacina",
+  const Vacina = sequelize.define("Vacina",
     {
       id:{
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
-      nome: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+      vaccineName: DataTypes.STRING,
       userId: {
-        type: DataTypes.INTEGER,
-        foreignKey: true
-      },
-      info: {
         type: DataTypes.STRING,
-        allowNull: false,
+        foreignKey: true,
       },
-      dose: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      }
+      info: DataTypes.STRING,
+      dose: DataTypes.INTEGER,
     },
     {
-      tableName: 'vacina',
-      underscored: true,
-      timestampes: false,
+      tableName: 'Vacinas',
+      timestamps: false,
     }
   )
-  Vacina.associate = function(models){
-    Vacina.belongsTo(models.User,{
-      as: 'User',
-      foreignKey: 'userId'
-    })
+  Vacina.associate = (models) => {
+    Vacina.belongsTo(models.User, {
+      foreignKey: 'userId',
+      as: 'user'
+    });
   }
   return Vacina
 }
