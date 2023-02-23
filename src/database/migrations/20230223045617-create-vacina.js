@@ -4,23 +4,22 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
 
-    await queryInterface.createTable('vacina', {
+    await queryInterface.createTable('Vacinas', {
       id:{
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      nome: {
+      vaccineName: {
         type: Sequelize.STRING,
         allowNull: false,
       },
       userId: {
         type: Sequelize.INTEGER,
-        foreignKey: true
+        references: {
+          model: 'Users',
+          key: 'id'
+        },
       },
       info: {
         type: Sequelize.STRING,
@@ -29,14 +28,18 @@ module.exports = {
       dose: {
         type: Sequelize.INTEGER,
         allowNull: false,
-      }
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
     });
 
   },
 
   async down (queryInterface, Sequelize) {
 
-    await queryInterface.dropTable('users');
+    await queryInterface.dropTable('Vacina');
 
   }
 };
