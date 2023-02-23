@@ -7,7 +7,7 @@
     "dev": "nodemon --watch src \"./src/**\" ./src/server.js",
     "start": "node ./src/server.js",
     "migration": "sequelize db:migrate",
-    "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
+    "db:create": "cd src/database && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "docker": "docker-compose up -d"
   },
   "repository": {
