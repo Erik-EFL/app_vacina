@@ -1,6 +1,8 @@
 const joi = require('joi');
 const { joiPasswordExtendCore } = require('joi-password');
+const customError = require('../Middleware/customError');
 const joiPassword = joi.extend(joiPasswordExtendCore);
+
 
 const verifyRegister = {
   loginCreate: (body) => {
@@ -9,17 +11,17 @@ const verifyRegister = {
       email: joi.string().email().required(),
       password: joiPassword.string()
               .min(8)
-              .minOfSpecialCharacters(2)
-              .minOfLowercase(2)
-              .minOfUppercase(2)
-              .minOfNumeric(2)
+              .minOfSpecialCharacters(1)
+              .minOfLowercase(1)
+              .minOfUppercase(1)
+              .minOfNumeric(1)
               .noWhiteSpaces()
               .required(),
     })
 
     const { error, value } = schema.validate(body);
 
-    if (error) throw new Error(error.details[0].message);
+    if (error) throw new customError(error.details[0].message, 'invalidData');
 
     return value;
   },
