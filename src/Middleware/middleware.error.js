@@ -6,5 +6,4 @@ const errorMiddleware = async (err, _req, res, next) => {
   next();
 };
 
-
 module.exports = errorMiddleware;
