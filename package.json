@@ -1,7 +1,8 @@
 {
   "name": "app_vacina",
   "version": "1.0.0",
-  "description": "",
+  "description": "Back-end do projeto App de Vacinas",
+  "module": "commonjs",
   "main": "./src/server.js",
   "scripts": {
     "dev": "nodemon --watch src \"./src/**\" ./src/server.js",
@@ -21,16 +22,16 @@
   },
   "homepage": "https://github.com/Erik-EFL/app_vacina#readme",
   "devDependencies": {
-    "@typescript-eslint/parser": "^5.53.0",
     "eslint": "^8.34.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-sonarjs": "^0.18.0",
     "nodemon": "^2.0.20",
-    "sequelize": "^6.28.2",
-    "sequelize-cli": "6.6.0"
+    "sequelize": "^6.29.0",
+    "sequelize-cli": "^6.6.0"
   },
   "dependencies": {
+    "@types/express": "4.17.13",
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
