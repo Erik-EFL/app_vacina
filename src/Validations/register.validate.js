@@ -21,7 +21,10 @@ const verifyRegister = {
 
     const { error, value } = schema.validate(body);
 
-    if (error) throw new customError(error.details[0].message, 'invalidData');
+    if (error) throw new customError({
+      status: 400,
+      message: error.details[0].message
+    });
 
     return value;
   },
