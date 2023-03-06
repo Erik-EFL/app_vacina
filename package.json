@@ -2,7 +2,6 @@
   "name": "app_vacina",
   "version": "1.0.0",
   "description": "Back-end do projeto App de Vacinas",
-  "module": "commonjs",
   "main": "./src/server.js",
   "scripts": {
     "dev": "nodemon --watch src \"./src/**\" ./src/server.js",

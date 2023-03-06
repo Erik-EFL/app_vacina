@@ -1,9 +1,15 @@
 const errorMiddleware = async (err, _req, res, next) => {
-  const { status, message } = err;
-
-  res.status(status).send({ message });
-
-  next();
+  if (err) {
+    const error = {
+      status: err.status || 500,
+      message: err.message || 'Internal Server Error',
+    };
+    return res.status(error.status).json({ error });
+  } else {
+    next();
+  }
 };
 
-module.exports = errorMiddleware;
+module.exports = {
+  errorMiddleware,
+};

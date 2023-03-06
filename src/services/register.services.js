@@ -4,17 +4,14 @@ const customError = require('../Middleware/customError');
 
 const registerServices = {
   findUserByEmail: async (email) => {
-    const findUser = await User.findOne({
-      where: {
-        email,
-      }
-    })
+    const user = await User.findOne({ where: { email } })
 
-    if (findUser) {
-      throw new customError('Email already registered', 'BadRequest');
-    }
+    if (user) throw new customError({
+      status: 409,
+      message:'User already registered'
+    });
 
-    return findUser;
+    return user;
   },
 
   createLogin: async (data) => {
